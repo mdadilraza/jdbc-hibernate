@@ -1,0 +1,22 @@
+package dao;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import dto.Mobile;
+
+public class FetchMobileByPrice {
+public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	
+	Scanner scanner = new Scanner(System.in);
+	System.out.println("Enter the price");
+	double price =scanner.nextDouble();
+	Mobile mobile = new Mobile();
+	
+	mobile.setMobilePrice(price);
+	
+	MobileDao mobileDao = new MobileDao();
+	mobileDao.fetchTableByPrice(mobile);
+	
+}
+}
